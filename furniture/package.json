@@ -9,6 +9,8 @@
   "author": "chacha",
   "license": "ISC",
   "dependencies": {
+    "fabric-ca-client": "^1.1.0-preview",
+    "fabric-client": "^1.1.0-preview",
     "grpc": "^1.8.0"
   }
 }
