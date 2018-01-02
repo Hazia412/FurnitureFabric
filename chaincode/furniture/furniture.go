@@ -94,19 +94,19 @@ func (s *SmartContract) queryFurniture(APIstub shim.ChaincodeStubInterface, args
 
 func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Response {
 	furnitures := []Furniture{
-		Furniture{Type:"chair" Size:"medium" Material:"plastic" Owner:"Hazia"},
-		Furniture{Type:"bed" Size:"king" Material:"wood" Owner:"Prajyot"},
-		Furniture{Type:"table" Size:"large-round" Material:"glass and wood" Owner:"Vibhuti"},
-		Furniture{Type:"couch" Size:"L-shaped" Material:"leather" Owner:"Prabhav"},
-		Furniture{Type:"cupboard" Size:"large" Material:"ply-wood" Owner:"Madhushree"},
-		Furniture{Type:"crib" Size:"medium" Material:"metal" Owner:"Lysanne"},
+		Furniture{Type:"chair", Size:"medium" ,Material:"plastic", Owner:"HaziaF"},
+		Furniture{Type:"bed" ,Size:"king", Material:"wood" ,Owner:"Prajyot"},
+		Furniture{Type:"table" ,Size:"large-round", Material:"glass and wood", Owner:"Vibhuti"},
+		Furniture{Type:"couch", Size:"L-shaped", Material:"leather", Owner:"Prabhav"},
+		Furniture{Type:"cupboard", Size:"large" ,Material:"ply-wood", Owner:"Madhushree"},
+		Furniture{Type:"crib", Size:"medium" ,Material:"metal" ,Owner:"Lysanne"},
 	}
 
 	i := 0
 	for i < len(furnitures) {
 		fmt.Println("i is ", i)
 		furnitureAsBytes, _ := json.Marshal(furnitures[i])
-		APIstub.PutState("Furniture"+strconv.Itoa(i), furnitureAsBytes)
+		APIstub.PutState("FURNITURE"+strconv.Itoa(i), furnitureAsBytes)
 		fmt.Println("Added", furnitures[i])
 		i = i + 1
 	}
@@ -142,7 +142,7 @@ func (s *SmartContract) queryAllFurnitures(APIstub shim.ChaincodeStubInterface) 
 	// buffer is a JSON array containing QueryResults
 	var buffer bytes.Buffer
 	buffer.WriteString("[")
-
+	buffer.WriteString("abc")
 	bArrayMemberAlreadyWritten := false
 	for resultsIterator.HasNext() {
 		queryResponse, err := resultsIterator.Next()

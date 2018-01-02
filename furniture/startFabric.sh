@@ -29,4 +29,7 @@ printf "\nTotal setup execution time : $(($(date +%s) - starttime)) secs ...\n\n
 printf "Start by installing required packages run 'npm install'\n"
 printf "Then run 'node enrollAdmin.js', then 'node registerUser'\n\n"
 printf "The 'node invoke.js' will fail until it has been updated with valid arguments\n"
-printf "The 'node query.js' may be run at anytime once the user has been registered\n\n"
+printf "The 'node queryAllFurnitures.js' to query all furnitures\n\n"
+printf "The 'node queryFurniture.js' to query a specific furniture\n\n"
+printf "The 'node createNewFurniture.js' to create new furniture\n\n"
+printf "The 'node changeOwner.js' to change owner of furniture\n\n"
