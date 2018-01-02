@@ -28,7 +28,6 @@ docker exec -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/g
 printf "\nTotal setup execution time : $(($(date +%s) - starttime)) secs ...\n\n\n"
 printf "Start by installing required packages run 'npm install'\n"
 printf "Then run 'node enrollAdmin.js', then 'node registerUser'\n\n"
-printf "The 'node invoke.js' will fail until it has been updated with valid arguments\n"
 printf "The 'node queryAllFurnitures.js' to query all furnitures\n\n"
 printf "The 'node queryFurniture.js' to query a specific furniture\n\n"
 printf "The 'node createNewFurniture.js' to create new furniture\n\n"
